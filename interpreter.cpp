@@ -77,13 +77,13 @@ class Table {
     }
     void list() {
         int identifiers = 0;
-        for (int i = 0; i < idTable->size(); i++) {
+        for (size_t i = 0; i < idTable->size(); i++) {
             if (!idTable->at(i).constant) {
                 identifiers++;
             }
         }
         cout << "Identifier list (" << identifiers << ")" <<endl;
-        for (int i = 0; i < idTable->size(); i++) {
+        for (size_t i = 0; i < idTable->size(); i++) {
             if (!idTable->at(i).constant) {
                 cout << setw(15) << idTable->at(i).id  << "  |  " << idTable->at(i).value << endl;
             }
@@ -517,7 +517,7 @@ void Parser::getNextStatement() {
     //The beginning of the statement should always be index 0
 
     //Determine the end of the statement.
-    int semiColonPosition = _inputBuffer.find(';');
+    long long unsigned int semiColonPosition = _inputBuffer.find(';');
     //If the semiColonPosition is contained within an open parenthesis ie Odd number of ", without escape characters;
         //find the next semiColon.
     //if statement {
@@ -575,7 +575,7 @@ void  Parser::getNextToken() {
         int startPoint = 1;
         int maxPoint = _currentStatement.length();
         while (true) {
-            int endPoint = startPoint + _currentStatement.substr(startPoint,maxPoint).find('"') + 1;
+            long long unsigned int endPoint = startPoint + _currentStatement.substr(startPoint,maxPoint).find('"') + 1;
             //If the '"' cannot be found, exit the function, display error.
             if (endPoint == string::npos) {
                 cout << "ERROR: Could not parse value beginning with parentheses." << endl;
@@ -599,7 +599,7 @@ void  Parser::getNextToken() {
         
         int endPoint;
         int maxPoint = _currentStatement.length();
-        int spacePosition = _currentStatement.find(32);
+        long long unsigned int spacePosition = _currentStatement.find(32);
         //If the spacePosition is found:
         if (spacePosition != string::npos) {
             //to drop the front end space.
