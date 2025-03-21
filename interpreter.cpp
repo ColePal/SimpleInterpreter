@@ -122,7 +122,7 @@ class Table {
         }
     }
     string getValue(string id) {
-        for (uint8_t i = 0; i < idTable->size(); i++) {
+        for (size_t i = 0; i < idTable->size(); i++) {
             if (idTable->at(i).id == id) {
                 return (idTable->at(i).value);
             }
@@ -132,7 +132,7 @@ class Table {
     }
     private:
     tableRow* get(string id) {
-        for (uint8_t i = 0; i < idTable->size(); i++) {
+        for (size_t i = 0; i < idTable->size(); i++) {
             if (idTable->at(i).id == id) {
                 return &(idTable->at(i));
             }
