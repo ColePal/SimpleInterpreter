@@ -197,7 +197,7 @@ class Executioner {
 
         //For each argumet passed to the command object, determine whether or not they
         //are literal or ID, add the appropriate result to output.
-        for (uint8_t i = 0; i < arguments.size(); i++) {
+        for (size_t i = 0; i < arguments.size(); i++) {
             if (regex_search(arguments[i], literalExpression)) {
                 string argument =  arguments[i].substr(1,arguments[i].length()-2);
                 //cout << "SHOULD NOT HAVE PARENTHASES " << argument << endl;
