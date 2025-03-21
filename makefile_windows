@@ -1,0 +1,9 @@
+interpreter.exe		: 	interpreter.o 
+	g++ -Wall -O2 interpreter.cpp -lws2_32 -o interpreter.exe 
+			
+interpreter.o		:	interpreter.cpp 
+	g++ -c -O2 -Wall interpreter.cpp
+	
+clean:
+	del *.o
+	del *.exe

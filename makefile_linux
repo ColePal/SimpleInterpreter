@@ -1,0 +1,8 @@
+interpreter.out		: 	interpreter.o 
+	g++ -Wall -O2 interpreter.cpp -o interpreter.out
+			
+interpreter.o		:	interpreter.cpp 
+	g++ -c -O2 -Wall interpreter.cpp
+	
+clean:
+	$(RM) interpreter
