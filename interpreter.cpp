@@ -77,13 +77,13 @@ class Table {
     }
     void list() {
         int identifiers = 0;
-        for (uint8_t i = 0; i < idTable->size(); i++) {
+        for (int i = 0; i < idTable->size(); i++) {
             if (!idTable->at(i).constant) {
                 identifiers++;
             }
         }
         cout << "Identifier list (" << identifiers << ")" <<endl;
-        for (uint8_t i = 0; i < idTable->size(); i++) {
+        for (int i = 0; i < idTable->size(); i++) {
             if (!idTable->at(i).constant) {
                 cout << setw(15) << idTable->at(i).id  << "  |  " << idTable->at(i).value << endl;
             }
